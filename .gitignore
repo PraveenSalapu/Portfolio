@@ -1,0 +1,7 @@
+node_modules/
+site/node_modules/
+site/.next/
+site/.turbo/
+.env
+*.log
+
