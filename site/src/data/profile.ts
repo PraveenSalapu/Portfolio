@@ -264,7 +264,12 @@ export const skills = {
 
 
 
-export const recognitions = [] as const;
+export const recognitions: Array<{
+  title: string;
+  year: string;
+  by: string;
+  icon: string;
+}> = [];
 
 export const credlyBadges = [
   {
