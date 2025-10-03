@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name | Cloud & AI Software Engineer",
+  title: "Sai Praveen Kumar Salapu | Cloud & AI Software Engineer",
   description:
     "Portfolio of a software engineer building resilient cloud platforms, intelligent ML products, and delightful developer experiences.",
   icons: {
