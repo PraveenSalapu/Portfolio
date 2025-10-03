@@ -9,7 +9,7 @@
   overview:
     "Software engineer with 3+ years delivering resilient microservices, event-driven systems, and serverless workloads across AWS and GCP. I pair Java/Spring Boot and Python automation with Terraform, data pipelines, and modern frontends to ship observable platforms while experimenting with RAG workflows, AI copilots, and analytics storytelling.",
   contact: {
-    email: "saipraveenkumarsalapu@gmail.com",
+    email: "email@saipraveenkumarsalapu.com",
     phone: "",
     phoneHref: "",
     resume: "https://www.linkedin.com/in/sai-praveen-kumar-salapu",
@@ -33,7 +33,7 @@ export const socialLinks = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/sai-praveen-kumar-salapu",
   },
-  { label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=saipraveenkumarsalapu@gmail.com" },
+  { label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=email@saipraveenkumarsalapu.com" },
 ];
 
 
