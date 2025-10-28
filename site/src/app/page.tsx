@@ -190,7 +190,7 @@ function Hero() {
         transition={{ duration: 0.6 }}
         className="space-y-8"
       >
-        <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium uppercase tracking-[0.35em] text-slate-200 shadow-[0_20px_50px_-40px_rgba(80,70,229,0.7)] text-cyan-200">
+        <div className="inline-flex items-center gap-3 rounded-full border border-slate-200/70 bg-white/80 px-5 py-2 text-sm font-medium uppercase tracking-[0.35em] text-cyan-600 shadow-[0_20px_50px_-40px_rgba(80,70,229,0.7)] dark:border-white/10 dark:bg-white/5 dark:text-cyan-200">
           <Typewriter
             phrases={rolePhrases}
             typingSpeed={70}
@@ -208,14 +208,14 @@ function Hero() {
           >
             {profile.name}
           </motion.h1>
-          <p className="text-xl text-slate-200 md:text-2xl">
+          <p className="text-xl text-slate-700 dark:text-slate-200 md:text-2xl">
             {profile.tagline}
           </p>
-          <p className="max-w-2xl text-base leading-7 text-slate-300">
+          <p className="max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
             {profile.overview}
           </p>
         </div>
-        <div className="flex items-center gap-3 text-sm text-slate-300">
+        <div className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
           <span className="flex items-center gap-2">
             <MapPin size={16} className="text-cyan-400" />
             {profile.location}
@@ -231,7 +231,7 @@ function Hero() {
             Let&apos;s collaborate
           </Link>
           <Link
-            className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-100 transition hover:border-cyan-400/60 hover:text-cyan-200"
+            className="inline-flex items-center justify-center rounded-full border border-slate-300/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-700 transition hover:border-cyan-400/60 hover:text-cyan-600 dark:border-white/20 dark:text-slate-100 dark:hover:text-cyan-200"
             href={profile.contact.resume}
             target="_blank"
             rel="noreferrer"
@@ -258,14 +258,11 @@ function Hero() {
         />
         <div className="grid w-full grid-cols-3 gap-3 text-center text-sm">
           {heroStats.map((stat) => (
-            <div
-              key={stat.label}
-              className="glass-panel px-3 py-4 text-slate-200"
-            >
+            <div key={stat.label} className="glass-panel px-3 py-4 text-slate-700 dark:text-slate-200">
               <p className="text-2xl font-semibold text-gradient">
                 {stat.value}
               </p>
-              <p className="mt-1 text-[0.7rem] uppercase tracking-[0.3em] text-slate-300">
+              <p className="mt-1 text-[0.7rem] uppercase tracking-[0.3em] text-slate-500 dark:text-slate-300">
                 {stat.label}
               </p>
             </div>
@@ -286,11 +283,11 @@ function AboutSection() {
         lead={about.intro}
       />
       <div className="grid gap-6 md:grid-cols-[1.2fr_1fr]">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-          <h3 className="text-lg font-semibold text-slate-100">
+        <div className="glass-panel p-6">
+          <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
             What I&apos;m focused on lately
           </h3>
-          <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
+          <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
             {about.highlights.map((item) => (
               <li key={item} className="flex gap-3">
                 <span
@@ -334,13 +331,13 @@ function AboutTile({
   detail: string;
 }) {
   return (
-    <div className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-xl">
-      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-violet-500/50 to-cyan-400/40 text-slate-950">
+    <div className="glass-panel flex items-center gap-4 px-4 py-3">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-violet-500/40 to-cyan-400/35 text-slate-900 dark:text-slate-950">
         <Icon size={18} />
       </div>
       <div>
-        <p className="text-sm font-semibold text-slate-100">{label}</p>
-        <p className="text-xs text-slate-300">{detail}</p>
+        <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{label}</p>
+        <p className="text-xs text-slate-600 dark:text-slate-300">{detail}</p>
       </div>
     </div>
   );
@@ -377,19 +374,16 @@ function Focus() {
         ))}
       </div>
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold text-slate-100">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
           What I&apos;m exploring now
         </h3>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {principles.map((principle) => (
-            <div
-              key={principle.title}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
-            >
-              <h4 className="text-lg font-semibold text-slate-100">
+            <div key={principle.title} className="glass-panel p-6">
+              <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
                 {principle.title}
               </h4>
-              <p className="mt-3 text-sm leading-6 text-slate-300">
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 {principle.description}
               </p>
             </div>
@@ -449,21 +443,18 @@ function Education() {
       />
       <div className="grid gap-6 md:grid-cols-2">
         {education.map((item) => (
-          <div
-            key={item.school}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
-          >
-            <p className="text-sm uppercase tracking-[0.3em] text-slate-400">
+          <div key={item.school} className="glass-panel p-6">
+            <p className="text-sm uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
               {item.period}
             </p>
-            <h3 className="mt-2 text-xl font-semibold text-slate-100">
+            <h3 className="mt-2 text-xl font-semibold text-slate-900 dark:text-slate-100">
               {item.school}
             </h3>
-            <p className="text-sm font-medium text-slate-300">
+            <p className="text-sm font-medium text-slate-600 dark:text-slate-300">
               {item.institution}
             </p>
-            <p className="mt-3 text-sm text-slate-300">{item.focus}</p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-400">
+            <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">{item.focus}</p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
               {item.achievements.map((achievement) => (
                 <li key={achievement} className="flex gap-3">
                   <span
@@ -511,21 +502,18 @@ function Certifications() {
           {recognitions.map((item) => {
             const Icon = recognitionIconMap[item.icon] ?? BadgeCheck;
             return (
-              <div
-                key={item.title}
-                className="flex items-center gap-3 rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-slate-200 backdrop-blur-xl"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-violet-500/60 to-cyan-400/40 text-slate-950">
+              <div key={item.title} className="glass-panel flex items-center gap-3 p-6 text-sm text-slate-700 dark:text-slate-200">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-violet-500/55 to-cyan-400/35 text-slate-900 dark:text-slate-950">
                   <Icon size={18} />
                 </div>
                 <div className="space-y-1">
-                  <p className="text-xs uppercase tracking-[0.35em] text-slate-400">
+                  <p className="text-xs uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">
                     {item.year}
                   </p>
-                  <h4 className="text-lg font-semibold text-slate-100">
+                  <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
                     {item.title}
                   </h4>
-                  <p className="text-slate-300">{item.by}</p>
+                  <p className="text-slate-600 dark:text-slate-300">{item.by}</p>
                 </div>
               </div>
             );
@@ -536,9 +524,9 @@ function Certifications() {
         {credlyBadges.map((badge) => (
           <div
             key={badge.id}
-            className="group flex flex-col items-center gap-5 rounded-3xl border border-white/10 bg-white/5 p-5 text-slate-200 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/60 hover:shadow-[0_28px_80px_-60px_rgba(56,189,248,0.65)]"
+            className="group flex flex-col items-center gap-5 rounded-3xl border border-slate-200/70 bg-white/90 p-5 text-slate-700 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/60 hover:shadow-[0_28px_80px_-60px_rgba(56,189,248,0.4)] dark:border-white/10 dark:bg-slate-950/70 dark:text-slate-200 dark:shadow-[0_35px_90px_-70px_rgba(15,23,42,0.8)]"
           >
-            <div className="w-full overflow-hidden rounded-2xl bg-slate-900/10 p-3 transition-transform duration-300 group-hover:scale-[1.03]">
+            <div className="w-full overflow-hidden rounded-2xl bg-white p-3 shadow-[0_18px_60px_-45px_rgba(15,23,42,0.45)] transition-transform duration-300 group-hover:scale-[1.03] dark:bg-white dark:shadow-[0_20px_80px_-50px_rgba(15,23,42,0.65)]">
               <CredlyBadge
                 id={badge.id}
                 width={badge.width}
@@ -550,7 +538,7 @@ function Certifications() {
               href={badge.href}
               target="_blank"
               rel="noreferrer"
-              className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-100 transition-colors group-hover:text-cyan-100"
+              className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-800 transition-colors group-hover:text-cyan-600 dark:text-slate-100 dark:group-hover:text-cyan-100"
             >
               View Credential
             </Link>
@@ -683,7 +671,7 @@ function Contact() {
           <CTAButton href={profile.contact.phoneHref}>Give me a call</CTAButton>
         ) : null}
       </div>
-      <p className="text-sm text-slate-400">
+      <p className="text-sm text-slate-500 dark:text-slate-400">
         Prefer async? Share context by email, and I&apos;ll reply within 48
         hours with next steps.
       </p>
@@ -814,7 +802,7 @@ function CTAButton({ href, children, variant = "outline" }: CTAButtonProps) {
         "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.35em] transition",
         variant === "solid"
           ? "bg-gradient-to-r from-violet-500 via-cyan-400 to-emerald-400 text-slate-950 shadow-[0_30px_90px_-60px_rgba(56,189,248,0.9)] hover:brightness-110"
-          : "border border-white/20 text-slate-100 hover:border-cyan-400/60 hover:text-cyan-200",
+          : "border border-slate-300/70 text-slate-700 hover:border-cyan-400/60 hover:text-cyan-600 dark:border-white/20 dark:text-slate-100 dark:hover:text-cyan-200",
       )}
     >
       {children}

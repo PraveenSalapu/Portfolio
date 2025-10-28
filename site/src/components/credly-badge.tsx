@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const CREDLY_SCRIPT_ID = "credly-embed-script";
@@ -19,6 +19,8 @@ export function CredlyBadge({
   height = 280,
   className,
 }: CredlyBadgeProps) {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
@@ -33,6 +35,38 @@ export function CredlyBadge({
     }
   }, []);
 
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const matcher = window.matchMedia("(prefers-color-scheme: dark)");
+    const updateTheme = (event: MediaQueryList | MediaQueryListEvent) => {
+      setTheme(event.matches ? "dark" : "light");
+    };
+
+    updateTheme(matcher);
+
+    if (typeof matcher.addEventListener === "function") {
+      matcher.addEventListener("change", updateTheme);
+      return () => matcher.removeEventListener("change", updateTheme);
+    }
+
+    matcher.addListener(updateTheme);
+    return () => matcher.removeListener(updateTheme);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const credly = (window as Record<string, unknown>).Credly as
+      | { renderBadgeElements?: () => void }
+      | undefined;
+    credly?.renderBadgeElements?.();
+  }, [theme]);
+
   return (
     <div
       className={cn("credly-embed", className)}
@@ -40,6 +74,7 @@ export function CredlyBadge({
       data-iframe-height={height}
       data-share-badge-id={id}
       data-share-badge-host="https://www.credly.com"
+      data-share-badge-theme={theme}
     />
   );
 }

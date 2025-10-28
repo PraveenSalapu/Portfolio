@@ -79,7 +79,7 @@ export function FloatingNav({ items }: FloatingNavProps) {
         >
           <div
             className={cn(
-              "glass-panel flex gap-2 border border-white/20 bg-white/10 backdrop-blur-xl transition-all duration-300 dark:bg-white/5",
+              "glass-panel flex gap-2 transition-all duration-300",
               isDesktop
                 ? "rounded-full px-3 py-2"
                 : "absolute right-0 top-12 w-48 flex-col gap-2 rounded-3xl px-4 py-4 shadow-xl",
@@ -104,7 +104,7 @@ export function FloatingNav({ items }: FloatingNavProps) {
                     isDesktop ? undefined : "w-full justify-start rounded-2xl text-sm tracking-[0.15em]",
                     isActive
                       ? "bg-gradient-to-r from-violet-500/80 to-cyan-400/80 text-slate-950 shadow-[0_18px_60px_-40px_rgba(56,189,248,0.9)]"
-                      : "text-slate-200 hover:text-cyan-200",
+                      : "text-slate-700 hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-200",
                   )}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -118,7 +118,7 @@ export function FloatingNav({ items }: FloatingNavProps) {
 
         <button
           type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-slate-200 shadow-lg backdrop-blur-xl transition hover:text-cyan-200"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200/70 bg-white/80 text-slate-700 shadow-lg backdrop-blur-xl transition hover:text-cyan-600 dark:border-white/20 dark:bg-white/10 dark:text-slate-200 dark:hover:text-cyan-200"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={showPanel}
           aria-label="Toggle navigation"

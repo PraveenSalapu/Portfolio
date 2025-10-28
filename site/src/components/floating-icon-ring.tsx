@@ -25,10 +25,10 @@ export function FloatingIconRing({
   return (
     <div className="relative h-60 w-60 md:h-72 md:w-72">
       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-500/40 via-cyan-400/20 to-transparent blur-3xl" />
-      <div className="absolute inset-6 rounded-full border border-white/20 bg-gradient-to-br from-white/40 via-white/10 to-transparent backdrop-blur-sm dark:from-white/10 dark:via-white/5" />
+      <div className="absolute inset-6 rounded-full border border-slate-200/70 bg-gradient-to-br from-white/60 via-white/20 to-transparent backdrop-blur-sm dark:border-white/20 dark:from-white/10 dark:via-white/5" />
       {centerImage ? (
         <motion.div
-          className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border border-white/40 bg-white/80 shadow-[0_25px_70px_-45px_rgba(14,116,144,0.75)] backdrop-blur-md dark:border-white/20 dark:bg-white/10"
+          className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border border-slate-200/80 bg-white/85 shadow-[0_25px_70px_-45px_rgba(14,116,144,0.55)] backdrop-blur-md dark:border-white/20 dark:bg-white/10"
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -67,7 +67,7 @@ export function FloatingIconRing({
           return (
             <motion.li
               key={item.label}
-              className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-white/60 bg-white/80 text-violet-600 shadow-lg backdrop-blur-md dark:border-white/20 dark:bg-white/10 dark:text-violet-200"
+              className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-slate-200/80 bg-white/85 text-violet-600 shadow-lg backdrop-blur-md dark:border-white/20 dark:bg-white/10 dark:text-violet-200"
               initial={{ opacity: 0, scale: 0.7 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
