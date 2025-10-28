@@ -3,6 +3,14 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
+declare global {
+  interface Window {
+    Credly?: {
+      renderBadgeElements?: () => void;
+    };
+  }
+}
+
 const CREDLY_SCRIPT_ID = "credly-embed-script";
 const CREDLY_SCRIPT_SRC = "https://cdn.credly.com/assets/utilities/embed.js";
 
@@ -61,10 +69,7 @@ export function CredlyBadge({
       return;
     }
 
-    const credly = (window as Record<string, unknown>).Credly as
-      | { renderBadgeElements?: () => void }
-      | undefined;
-    credly?.renderBadgeElements?.();
+    window.Credly?.renderBadgeElements?.();
   }, [theme]);
 
   return (
