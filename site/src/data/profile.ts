@@ -1,10 +1,10 @@
 ﻿export const profile = {
   name: "Sai Praveen Kumar Salapu",
   tagline:
-    "Software engineer blending cloud architecture, data storytelling, and AI experimentation.",
+    "Software engineer blending cloud architecture, data pipelines, and AI experimentation.",
   location: "Tempe, AZ",
   availability:
-    "Open to full-time software engineering roles starting Dec 2025",
+    "Actively looking for full-time software engineering roles",
   photo: "/edited-adjusted-1756403309460.png",
   overview:
     "Software engineer with 3+ years delivering resilient microservices, event-driven systems, and serverless workloads across AWS and GCP. I pair Java/Spring Boot and Python automation with Terraform, data pipelines, and modern frontends to ship observable platforms while experimenting with RAG workflows, AI copilots, and analytics storytelling.",
@@ -31,7 +31,7 @@ export const about = {
 export const socialLinks = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/sai-praveen-kumar-salapu",
+    href: "https://www.linkedin.com/in/saisalapu",
   },
   { label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=email@saipraveenkumarsalapu.com" },
 ];
